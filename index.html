@@ -219,22 +219,19 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     -->
     
-    <!-- Skip link for accessibility -->
-    <a href="#main-content" class="skip-link">Spring naar hoofdinhoud</a>
-    
     <!-- Hero Section -->
     <header class="hero" role="banner">
         <div class="hero__image-container">
             <img 
                 src="images/Villa El Roque - Noogar Design -111.jpg"
-                alt="Casa Victoria El Roque - Elegant private villa with heated outdoor pool in El Roque, Fuerteventura"
+                alt="Casa Victoria El Roque -  3 bedroom villa with heated outdoor pool in El Roque, Fuerteventura"
                 class="hero__image">
         </div>
         <div class="hero__content">
             <h1 class="hero__title">Casa Victoria El Roque</h1>
-            <p class="hero__subtitle">Elegant Private Villa with Heated Outdoor Pool</p>
+            <p class="hero__subtitle">3 bedroom Villa with Heated Outdoor Pool</p>
             <a href="#reserveer" class="btn btn--primary btn--large" aria-label="Book your stay at Casa Victoria El Roque">
-                Book Now
+                Availability and Prices
             </a>
         </div>
     </header>
@@ -507,7 +504,7 @@
             <div class="footer__content">
                 <p class="footer__text">&copy; 2026 Casa Victoria El Roque</p>
                 <a href="https://www.booking.com" class="btn btn--secondary" target="_blank" rel="noopener noreferrer" aria-label="Book directly via Booking.com (opens in new window)">
-                    Book Direct
+                    Availability and Prices
                 </a>
             </div>
         </div>
@@ -551,9 +548,7 @@
             'Villa El Roque - Noogar Design -45.jpg',
             'Villa El Roque - Noogar Design -107.jpg',
             'Villa El Roque - Noogar Design -47.jpg', // Portrait 1
-            'Villa El Roque - Noogar Design -78.jpg', // Portrait 2
             'Villa El Roque - Noogar Design -96.jpg', // Landscape 1
-            'Villa El Roque - Noogar Design -102.jpg', // Landscape 2
             'Villa El Roque - Noogar Design -3.jpg',
             'Villa El Roque - Noogar Design -6.jpg',
             'Villa El Roque - Noogar Design -9.jpg',
@@ -627,9 +622,9 @@
             'Villa El Roque - Noogar Design -119.jpg'
         ];
         
-        // Top 14 photos (first 14 from photos array - includes 2 portrait + 2 landscape extras)
-        const top14Photos = photos.slice(0, 14);
-        const remainingPhotos = photos.slice(14);
+        // Top 12 photos (first 12 from photos array - includes 1 portrait + 1 landscape extra)
+        const top12Photos = photos.slice(0, 12);
+        const remainingPhotos = photos.slice(12);
         
         let currentIndex = 0;
         let touchStartX = 0;
@@ -645,15 +640,15 @@
         const lightboxPrev = document.getElementById('lightboxPrev');
         const lightboxNext = document.getElementById('lightboxNext');
         
-        // Load top 14 gallery
-        function loadTop14Gallery() {
-            top14Photos.forEach((photo, i) => {
+        // Load top 12 gallery
+        function loadTop12Gallery() {
+            top12Photos.forEach((photo, i) => {
                 const actualIndex = photos.indexOf(photo);
                 const img = document.createElement('img');
                 img.src = `images/${photo}`;
                 img.alt = `Casa Victoria El Roque - Foto ${actualIndex + 1}`;
                 img.className = 'gallery__photo';
-                img.loading = 'eager'; // All top 14 eager load
+                img.loading = 'eager'; // All top 12 eager load
                 img.addEventListener('click', () => openLightbox(actualIndex));
                 img.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -764,7 +759,7 @@
         }
         
         // Initialize both galleries
-        loadTop14Gallery();
+        loadTop12Gallery();
         loadFullGallery();
     })();
     </script>
